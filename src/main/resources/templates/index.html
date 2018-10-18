@@ -6,9 +6,8 @@
 </head>
 <body>
     <div layout:fragment="content">
-    <br/> <br/>
         <div class="jumbotron main-content">
-            <h1>Tech Events Guadalajara</h1>
+            <h1 class="mt-2">Tech Events Guadalajara</h1>
             <h2>Find tech events at the Mexican Silicon Valley</h2>
             <h3 sec:authorize="isAuthenticated()">Welcome <span th:text="${username}"></span>!</h3>
             <h3 sec:authorize="isAnonymous()">Login to see events!</h3>

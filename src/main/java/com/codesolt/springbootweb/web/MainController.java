@@ -50,4 +50,11 @@ public class MainController {
         model.addAttribute("talks", talks);
         return "talks-view";
     }
+    
+    @GetMapping(value="/talks")
+    public String getTalks(Model model) {
+        List<Talk> talks = talkrepo.findAll();
+        model.addAttribute("talks", talks);
+        return "talks-view";
+    }
 }

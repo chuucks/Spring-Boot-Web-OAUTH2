@@ -22,5 +22,5 @@ public class Talk {
 	private Long eventId;
 	private String name;
 	private String speaker;
-	private String resume;	
+	private String resume;
 }
