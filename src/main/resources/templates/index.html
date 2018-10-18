@@ -1,18 +1,20 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout.html}" lang="en">
 <head>
-    <title>Eventos Tech Gdl</title>
+    <title>Tech Events Guadalajara</title>
     <meta charset="utf-8"/>
 </head>
 <body>
     <div layout:fragment="content">
     <br/> <br/>
         <div class="jumbotron main-content">
-            <h1>Eventos Tech Guadalajara</h1>
-            <p>Encuentra eventos de tecnología en el Silicon Valley mexicano</p>
+            <h1>Tech Events Guadalajara</h1>
+            <h2>Find tech events at the Mexican Silicon Valley</h2>
+            <h3 sec:authorize="isAuthenticated()">Welcome <span th:text="${username}"></span>!</h3>
+            <h3 sec:authorize="isAnonymous()">Login to see events!</h3>
         </div>
         <div class="container">
-            <h4><a href="/event">Ver más...</a></h4>
+            <h4><a href="/event">See more...</a></h4>
         </div>
     </div>
 </body>

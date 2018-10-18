@@ -1,5 +1,6 @@
 package com.codesolt.springbootweb.web;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,7 +27,9 @@ public class MainController {
 	private TalkRepository talkrepo;
 	
     @GetMapping(value={"/", "/index"})
-    public String getHomePage(Model model) {
+    public String getHomePage(Model model, Principal principal) {    	
+    	if(principal!=null)
+    		model.addAttribute("username", principal.getName());
         return "index";
     }
     

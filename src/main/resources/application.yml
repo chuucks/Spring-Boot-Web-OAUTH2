@@ -3,12 +3,12 @@ security:
         enabled: false
     oauth2:
         client:
-            clientId: 239634505613-ts763omg21cdvlphhprq884l8jmcg49b.apps.googleusercontent.com
-            clientSecret: xMqw4qjSkWeoOJH1QelT1CLw
+            clientId: 
+            clientSecret: 
             accessTokenUri: https://www.googleapis.com/oauth2/v4/token
             userAuthorizationUri: https://accounts.google.com/o/oauth2/v2/auth
             clientAuthenticationScheme: form
-            scope: email
+            scope: profile
         resource:
             userInfoUri: https://www.googleapis.com/oauth2/v3/userinfo
 spring:
