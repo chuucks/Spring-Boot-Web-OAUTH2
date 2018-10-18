@@ -26,7 +26,7 @@ public class MainController {
 	@Autowired
 	private TalkRepository talkrepo;
 	
-    @GetMapping(value={"/", "/index"})
+    @GetMapping(value="/")
     public String getHomePage(Model model, Principal principal) {    	
     	if(principal!=null)
     		model.addAttribute("username", principal.getName());

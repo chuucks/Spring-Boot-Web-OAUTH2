@@ -70,28 +70,6 @@
 		    <artifactId>lombok</artifactId>
 		    <scope>provided</scope>
 		</dependency>
-
-		<!-- Web jars -->
-<!-- 		<dependency> -->
-<!-- 		    <groupId>org.webjars</groupId> -->
-<!-- 		    <artifactId>jquery</artifactId> -->
-<!-- 		    <version>3.3.1-1</version> -->
-<!-- 		</dependency> -->
-<!-- 	    <dependency> -->
-<!-- 	        <groupId>org.webjars</groupId> -->
-<!-- 	        <artifactId>bootstrap</artifactId> -->
-<!-- 	        <version>3.1.0</version> -->
-<!-- 	    </dependency> -->
-<!-- 	    <dependency> -->
-<!-- 		    <groupId>org.webjars.bower</groupId> -->
-<!-- 		    <artifactId>datatables</artifactId> -->
-<!-- 		    <version>1.10.19</version> -->
-<!-- 		</dependency> -->
-<!-- 	    <dependency> -->
-<!-- 	        <groupId>org.webjars</groupId> -->
-<!-- 	        <artifactId>webjars-locator</artifactId> -->
-<!-- 	        <version>0.30</version> -->
-<!-- 	    </dependency> -->
 		
 		<!-- Runtime dependencies -->
 		<dependency>

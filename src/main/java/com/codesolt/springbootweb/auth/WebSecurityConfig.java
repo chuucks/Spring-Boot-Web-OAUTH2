@@ -15,12 +15,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
             .antMatcher("/**")
             .authorizeRequests()            
-            .antMatchers("/", "/index", "/login", "/webjars/**", "/error**")
+            .antMatchers("/", "/login**", "/webjars/**")
             	.permitAll()
             .anyRequest()
             	.authenticated()
             .and().logout()
-            	.logoutSuccessUrl("/index").permitAll()
+            	.logoutSuccessUrl("/").permitAll()
         	.and()
         		.csrf()
         		.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());

@@ -20,7 +20,7 @@
                 <th scope="col">Venue</th>
                 <th scope="col">Topic</th>
                 <th scope="col">Day</th>
-                <th scope="col">Suscribe</th>
+                <th scope="col">Detais</th>
             </thead>
             <tbody>
                 <tr th:each="event : ${events}">                    
@@ -28,7 +28,7 @@
                     <td th:text="${event.venue}"></td>
                     <td th:text="${event.topic}"></td>
                     <td th:text="${#dates.format(event.day, 'dd-MM-yyyy')}"></td>
-                    <th scope="row"><a th:href="@{'/event/' + ${event.id}}">Read more...</a></th>                    
+                    <th scope="row"><a th:href="@{'/event/' + ${event.id}}">See talks...</a></th>                    
                 </tr>
             </tbody>
         </table>
