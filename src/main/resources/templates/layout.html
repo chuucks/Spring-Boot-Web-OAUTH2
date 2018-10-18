@@ -1,0 +1,80 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" lang="en">
+    <head th:fragment="head-fragment">
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>        
+                
+        <title layout:title-pattern="$LAYOUT_TITLE | $CONTENT_TITLE">Tech Events Guadalajara</title>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <a class="navbar-brand" th:href="@{/index}">Tech Events Guadalajara</a>
+                <div class="navbar-nav mr-auto">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/event}">Events</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar-nav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item" sec:authorize="isAnonymous()">
+                                <a class="nav-link" th:href="@{/login}">Login</a>
+                        </li>
+                        <li class="nav-item" sec:authorize="isAuthenticated()">
+                            <button onClick="logout()" class="btn btn-primary">Logout</button>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main role="main">
+            <div layout:fragment="content"></div>
+        </main>
+		
+		<br/>
+		
+        <footer class="footer">
+            <div class="container">
+                <p class="text-center text-uppercase text-muted">Carlos Salazar, Codesolt 2018 &copy;</p>
+                <p class="text-center text-muted">Contacto: <a href="mailto:carlos.salazar@codesolt.com" target="_blank">carlos.salazar@codesolt.com</a></p>
+            </div>
+        </footer>
+		        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+                
+        <script>
+	        $.ajaxSetup({
+	        	beforeSend : function(xhr, settings) {
+	        	  if (settings.type == 'POST' || settings.type == 'PUT'
+	        	      || settings.type == 'DELETE') {
+	        	    if (!(/^http:.*/.test(settings.url) || /^https:.*/
+	        	        .test(settings.url))) {
+	        	      xhr.setRequestHeader("X-XSRF-TOKEN",
+	        	          Cookies.get('XSRF-TOKEN'));
+	        	    }
+	        	  }
+	        	}
+	        });
+        
+	        var logout = function() {
+	            $.post("/logout", function() {
+	                $("#user").html('');
+	                $(".unauthenticated").show();
+	                $(".authenticated").hide();
+	            })
+	            window.location.replace("/");
+	            return true;
+	        }        
+		</script>
+        
+    </body>
+</html>

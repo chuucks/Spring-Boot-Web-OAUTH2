@@ -1,0 +1,38 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"  layout:decorate="~{layout}" lang="en">
+<head>
+    <title>Event</title>
+</head>
+<body>
+
+<div layout:fragment="content">
+    <br/> <br/>
+    <div class="container main-content">
+        <div class="row">
+            <div class="col-7">
+                <h3 th:text="${event.name}">Talks of event: </h3>
+            </div>
+        </div>
+        <table id="table" class="table table-striped table-sm">
+            <thead>
+                <th scope="col">Name</th>
+                <th scope="col">Speaker</th>
+                <th scope="col">Resume</th>
+            </thead>
+            <tbody>
+            	<tr th:each="talk : ${talks}">
+		            <td th:text="${talk.name}"></td>
+		            <td th:text="${talk.speaker}"></td>
+		            <td th:text="${talk.resume}"></td>
+		        <tr/>
+            </tbody>
+        </table>
+<!--         Solicitar acceso -->
+<!-- 		<div class="col"> -->
+<!--         	<a th:href="@{/guests/add}">Add New Guest</a> -->
+<!--         </div> -->
+    </div>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+</div>
+</body>
+</html>
