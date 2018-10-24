@@ -10,7 +10,8 @@
     <div class="container main-content">
         <div class="row">
             <div class="col-7">
-                <h3 th:if="${event != null}"th:text="${event.name}">Talks</h3>
+            	<br />
+                <h3>Talks <span th:if="${event != null}"th:text="${event.name}"></span></h3>
             </div>
         </div>
         <table id="table" class="table table-striped table-sm">
