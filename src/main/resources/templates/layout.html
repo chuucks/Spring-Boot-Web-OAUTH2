@@ -4,10 +4,9 @@
 	    <title>Tech Events Guadalajara</title>
 	    <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-	
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>		        
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>        
+				
+	    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="/webjars/datatables/css/jquery.dataTables.min.css"/>        
                 
         <title layout:title-pattern="$LAYOUT_TITLE | $CONTENT_TITLE">Tech Events Guadalajara</title>
     </head>
@@ -50,8 +49,12 @@
                 <p class="text-center text-muted">Contacto: <a href="mailto:carlos.salazar@codesolt.com" target="_blank">carlos.salazar@codesolt.com</a></p>
             </div>
         </footer>
-
-		<script>		
+		
+		<script src="/webjars/jquery/jquery.min.js"></script>
+        <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+		<script src="/webjars/js-cookie/js.cookie.js"></script>
+        
+        <script>		
 		$.ajaxSetup({
 			beforeSend : function(xhr, settings) {
 				if (settings.type == 'POST') {
@@ -73,10 +76,6 @@
 		return true;
 		}
 		</script>
-		
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>        
         
     </body>
 </html>

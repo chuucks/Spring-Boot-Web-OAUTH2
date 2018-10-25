@@ -1,4 +1,4 @@
-package com.codesolt.springbootweb.web;
+package com.codesolt.springbootweb.controller;
 
 import java.security.Principal;
 import java.util.List;
