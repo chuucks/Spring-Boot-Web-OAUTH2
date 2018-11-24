@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.codesolt.springbootweb.domain.Attendee;
 import com.codesolt.springbootweb.domain.Event;
 import com.codesolt.springbootweb.domain.Talk;
 import com.codesolt.springbootweb.exception.EventNotFoundException;
+import com.codesolt.springbootweb.repo.AttendeeRepository;
 import com.codesolt.springbootweb.repo.EventRepository;
 import com.codesolt.springbootweb.repo.TalkRepository;
 
@@ -25,12 +27,21 @@ public class MainController {
 	private EventRepository eventRepo;
 	@Autowired
 	private TalkRepository talkrepo;
+	@Autowired
+	private AttendeeRepository attendeeRepo;
 	
     @GetMapping(value="/")
     public String getHomePage(Model model, Principal principal) {    	
     	if(principal!=null)
     		model.addAttribute("username", principal.getName());
         return "index";
+    }
+
+    @GetMapping(value="/attendee")
+    public String getAttendee(Model model) {
+        List<Attendee> attendees = attendeeRepo.findAll();
+        model.addAttribute("attendees", attendees);
+        return "attendees-view";
     }
     
     @GetMapping(value="/event")

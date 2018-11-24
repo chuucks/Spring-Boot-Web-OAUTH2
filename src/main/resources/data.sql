@@ -23,3 +23,12 @@ INSERT INTO TALK (EVENT_ID, NAME, SPEAKER, RESUME) VALUES(7, 'Finantial inclusio
 INSERT INTO TALK (EVENT_ID, NAME, SPEAKER, RESUME) VALUES(7, 'Fintech', 'Kueski CTO', 'Technology at finantial startups');
 INSERT INTO TALK (EVENT_ID, NAME, SPEAKER, RESUME) VALUES(8, 'Spring Everything', 'Carlos Salazar', 'How to build everything with Spring Boot');
 INSERT INTO TALK (EVENT_ID, NAME, SPEAKER, RESUME) VALUES(8, 'Android patterns', 'José Ángel', 'Building better Android');
+
+INSERT INTO ATTENDEE (FIRST_NAME, LAST_NAME) VALUES('Laura', 'Elena');
+INSERT INTO ATTENDEE (FIRST_NAME, LAST_NAME) VALUES('Gabriela', 'Munoz');
+INSERT INTO ATTENDEE (FIRST_NAME, LAST_NAME) VALUES('Hector', 'Paredes');
+INSERT INTO ATTENDEE (FIRST_NAME, LAST_NAME) VALUES('Carlos', 'Salazar');
+INSERT INTO ATTENDEE (FIRST_NAME, LAST_NAME) VALUES('Daniel', 'Cardenas');
+
+
+

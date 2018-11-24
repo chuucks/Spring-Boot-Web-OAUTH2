@@ -1,7 +1,7 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}" lang="en">
 <head>
-    <title>Tech Events Guadalajara</title>
+    <title>Attendees to Tech Events Guadalajara</title>
     <meta charset="utf-8"/>
 </head>
 <body>
@@ -16,19 +16,13 @@
         </div>
         <table id="table" class="table table-striped table-sm">
             <thead>
-                <th scope="col">Name</th>
-                <th scope="col">Venue</th>
-                <th scope="col">Topic</th>
-                <th scope="col">Day</th>
-                <th scope="col">Details</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
             </thead>
             <tbody>
-                <tr th:each="event : ${events}">                    
-                    <td th:text="${event.name}"></td>
-                    <td th:text="${event.venue}"></td>
-                    <td th:text="${event.topic}"></td>
-                    <td th:text="${#dates.format(event.day, 'dd-MM-yyyy')}"></td>
-                    <th scope="row"><a th:href="@{'/event/' + ${event.id}}">See talks...</a></th>                    
+                <tr th:each="attendee : ${attendees}">                    
+                    <td th:text="${attendee.firstName}"></td>
+                    <td th:text="${attendee.lastName}"></td>                    
                 </tr>
             </tbody>
         </table>
