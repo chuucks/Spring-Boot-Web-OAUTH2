@@ -3,8 +3,8 @@ security:
         enabled: false
     oauth2:
         client:
-            clientId: 239634505613-ts763omg21cdvlphhprq884l8jmcg49b.apps.googleusercontent.com
-            clientSecret: Uh5X5q7A-FbYsBG4XdRmjuIz
+            clientId: <your-client-id>
+            clientSecret: <your-client-secret>
             accessTokenUri: https://www.googleapis.com/oauth2/v4/token
             userAuthorizationUri: https://accounts.google.com/o/oauth2/v2/auth
             clientAuthenticationScheme: form
